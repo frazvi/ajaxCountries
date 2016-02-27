@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='ajaxCountriesApp'>
+<head>
+	<title> Ajax Countries </title>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js'></script>
+	<script src='main.js'></script>
+</head>
+<body ng-controller='ajaxCountriesController'>
+	<button ng-click='goToCountries()'> Load Countries </button>
+
+	<form ng-submit='findCountry()'>
+		<input ng-model='search.name' type='text'>
+		<input type='submit'>
+	</form>
+
+
+	<ul> 
+		<li ng-repeat="country in getAllCountries"> {{country.name}} </li>
+	</ul>
+</body>
+</html>
